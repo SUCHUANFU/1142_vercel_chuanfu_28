@@ -1,8 +1,22 @@
-import {createUser} from '@/actions/userAction_28';
+'use client';
+
+import { createUser2 } from '@/actions/userAction_28';
+import { useFormStatus, useFormState } from 'react-dom';
+
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+  return (
+    <button type='submit' className={btnStyle} disabled={pending}>
+      {pending ? 'submitting...' : 'Submit'}
+    </button>
+  );
+};
 
 const Form_28 = () => {
+  const [message,formAction] = useFormState(createUser2,null);
   return (
-    <form action={createUser} className={formStyle}>
+    <form action={formAction} className={formStyle}>
+      {message && <p>{message}</p>}
       <h2 className='text-2xl capitalize'>create user</h2>
       <label htmlFor='name' className='font-bold'>
         Name
@@ -14,9 +28,7 @@ const Form_28 = () => {
       </label>
       <input type='text' name='email' required className={inputStyle} />
       
-      <button type='submit' className={btnStyle}>
-        Submit
-      </button>
+    <SubmitButton/>
     </form>
   );
 };

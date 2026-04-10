@@ -8,6 +8,7 @@ const Navbar_28 = () => {
       <Link href='/actions_28'>Actions_28</Link>
       <Link href='/users_db_28'>users_db_28</Link>
       <Link href='/grocery_28'>grocery_28</Link>
+      <Link href='/grocery_db_28'>grocery_db_28</Link>
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import { removeUser } from '@/actions/userAction_28';
+import { removeUser } from '@/actions/user.action_28';
 
 const DeleteButton_28 = ({ id }: { id: number }) => {
   // 使用 bind 預傳 id 參數給 removeUser 函式

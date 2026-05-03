@@ -7,6 +7,7 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    // "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -28,7 +29,17 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "src/app/_assets/wrapper/Blog2_28.tsx", "src/app/_assets/wrapper/Grocery_28.tsx", "src/app/_assets/wrapper/Navbar_28.tsx", "src/app/grocery_28/_components/Form_28.jsx", "src/app/grocery_28/_components/Items_28.jsx", "src/app/grocery_28/_components/SingleItem_28.jsx", "src/app/grocery_28/page.jsx", "src/app/grocery_db_28/_components/Form_28.jsx", "src/app/grocery_db_28/_components/Items_28.jsx", "src/app/grocery_db_28/_components/SingleItem_28.jsx", "src/app/grocery_db_28/page.jsx"  ],
+    "**/*.mts",
+    "src/app/(demo)/_assets/wrapper/Navbar_28.jsx",
+    "src/app/(demo)/_assets/wrapper/Grocery_28.jsx",
+    "src/app/(demo)/_assets/wrapper/Blog2_28.jsx",
+    "src/app/(demo)/grocery_28/page.tsx",
+    "src/app/(demo)/grocery_28/_components/SingleItem_28.tsx",
+    "src/app/(demo)/grocery_28/_components/Items_28.tsx",
+    "src/app/(demo)/grocery_28/_components/Form_28.tsx",
+    "src/app/(demo)/grocery_db28/_components/SingleItem_28.jsx",
+    "src/app/(demo)/grocery_db28/_components/Form_28.jsx",
+    "src/app/(demo)/grocery_db28/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }

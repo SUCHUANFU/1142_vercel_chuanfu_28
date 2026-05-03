@@ -32,3 +32,18 @@ export type Post = Prisma.PostModel
  * 
  */
 export type Grocery = Prisma.GroceryModel
+/**
+ * Model Blog_28
+ * 
+ */
+export type Blog_28 = Prisma.Blog_28Model
+/**
+ * Model Category_28
+ * 
+ */
+export type Category_28 = Prisma.Category_28Model
+/**
+ * Model Shop_28
+ * 
+ */
+export type Shop_28 = Prisma.Shop_28Model

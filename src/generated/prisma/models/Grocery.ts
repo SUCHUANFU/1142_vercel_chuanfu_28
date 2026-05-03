@@ -144,7 +144,7 @@ export type GroceryGroupByOutputType = {
   _max: GroceryMaxAggregateOutputType | null
 }
 
-export type GetGroceryGroupByPayload<T extends GroceryGroupByArgs> = Prisma.PrismaPromise<
+type GetGroceryGroupByPayload<T extends GroceryGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<GroceryGroupByOutputType, T['by']> &
       {

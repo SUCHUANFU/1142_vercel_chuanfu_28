@@ -3,57 +3,49 @@
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 
-// 獲取所有使用者
-export const fetchUsers = async () => {
+export const fetchUsers_28 = async () => {
   const users = await prisma.user.findMany();
   return users;
 };
 
-// 建立新使用者
 export const createUser = async (formData: FormData) => {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
-  
   const newUser = { name, email };
-  console.log('newUser', newUser);
 
+  console.log('newUser:', newUser);
   try {
     const result = await prisma.user.create({
       data: newUser,
     });
-    // 成功後重新導向或刷新頁面資料
     revalidatePath('/users_db_28');
   } catch (error) {
-    console.log(error);
+    console.error('Error creating user:', error);
   }
 };
 
-export const createUser2 = async (prevState: any, formDate: FormData) => {
-  const name = formDate.get('name') as string;
-  const email = formDate.get('email') as string;
+export const createUser2 = async (prevState: any, formData: FormData) => {
+  const name = formData.get('name') as string;
+  const email = formData.get('email') as string;
   const newUser = { name, email };
-  console.log('newUser', newUser);
+
+  console.log('newUser:', newUser);
   try {
     const result = await prisma.user.create({
       data: newUser,
     });
-    revalidatePath('/users_db_xx');
+    revalidatePath('/users_db_28');
     return 'user created successfully';
   } catch (error) {
-    console.log(error);
-    return 'failed to create user...';
+    console.error('Error creating user:', error);
+    return 'failed to create user';
   }
 };
 
 export const removeUser = async (id: number, formData: FormData) => {
-  console.log('id', id);
-  
-
+  console.log('Removing user with id:', id);
   await prisma.user.delete({
-    where: {
-      id: id,
-    },
+    where: { id },
   });
-
   revalidatePath('/users_db_28');
 };

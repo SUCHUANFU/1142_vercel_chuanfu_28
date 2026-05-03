@@ -8,7 +8,7 @@ const connectionString = `${process.env.DATABASE_URL}`;
 
 // 建立 pg 連線池
 const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
+const adapter = new PrismaPg(pool as any);
 
 const prismaClientSingleton = () => {
   // Prisma 7 會自動抓取 prisma.config.ts 的設定

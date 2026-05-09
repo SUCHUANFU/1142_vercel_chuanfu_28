@@ -12,7 +12,7 @@ const P1_xx = async () => {
     <Wrapper>
       <section className='blogs'>
         <div className='section-title'>
-          <h2>blogs from local PosgreSQL -- CHUANFUSU, 213410128</h2>
+          <h2>blogs from local PosgreSQL -- Chuanfu Su, 213410128</h2>
         </div>
         <div className='blogs-center2'>
           {blogs_28?.map((blog) => {

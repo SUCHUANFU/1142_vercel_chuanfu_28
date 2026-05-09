@@ -1,4 +1,4 @@
-CREATE TABLE "Category_16" (
+CREATE TABLE "Category_28" (
     cid int NOT NULL PRIMARY KEY,
     cname varchar(255),
     size varchar(255),
@@ -8,7 +8,7 @@ CREATE TABLE "Category_16" (
 );
 
 
-INSERT INTO "Category_16" (cid, cname, size, image_url, remote_image_url, link_url) 
+INSERT INTO "Category_28" (cid, cname, size, image_url, remote_image_url, link_url) 
 VALUES 
 (1, 'hats', null, '/images/midterm/homepage/hats.png', 'https://i.ibb.co/cvpntL1/hats.png', '/mid_xx/hats'), 
 (2, 'jackets', null, '/images/midterm/homepage/jackets.png', 'https://i.ibb.co/px2tCc3/jackets.png', '/mid_xx/jackets'), 
@@ -16,7 +16,7 @@ VALUES
 (4, 'womens', 'large', '/images/midterm/homepage/womens.png', 'https://i.ibb.co/GCCdy8t/womens.png', '/mid_xx/womens'), 
 (5, 'mens', 'large', '/images/midterm/homepage/mens.png', 'https://i.ibb.co/R70vBrQ/men.png', '/mid_xx/mens');
 
-CREATE TABLE "Shop_16" (
+CREATE TABLE "Shop_28" (
     pid int NOT NULL PRIMARY KEY,
     pname varchar(255),
     cat_id int,
@@ -26,7 +26,7 @@ CREATE TABLE "Shop_16" (
 );
 
 
-INSERT INTO "Shop_16" (pid, pname, cat_id, price, img_url, remote_img_url) 
+INSERT INTO "Shop_28" (pid, pname, cat_id, price, img_url, remote_img_url) 
 VALUES 
 (1, 'Brown Brim', 1, 25, '/images/midterm/hats/brown-brim.png', 'https://i.ibb.co/ZYW3VTp/brown-brim.png'), 
 (2, 'Blue Beanie', 1, 18, '/images/midterm/hats/blue-beanie.png', 'https://i.ibb.co/ypkgK0X/blue-beanie.png'), 
@@ -36,18 +36,18 @@ VALUES
 (6, 'Palm Tree Cap', 1, 14, '/images/midterm/hats/palm-tree-cap.png', 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png'),
 (7, 'Red Beanie', 1, 18, '/images/midterm/hats/red-beanie.png', 'https://i.ibb.co/bLB646Z/red-beanie.png'), 
 (8, 'Wolf Cap', 1, 14, '/images/midterm/hats/wolf-cap.png', 'https://i.ibb.co/1f2nWMM/wolf-cap.png'), 
-(9, 'Blue Snapback', 1, 16, '/images/midterm/hats/blue-snapback.png', 'https://i.ibb.co/X2VJP2W/blue-snapback.png'), 
+(9, 'Blue Snapback', 1, 28, '/images/midterm/hats/blue-snapback.png', 'https://i.ibb.co/X2VJP2W/blue-snapback.png'), 
 (10, 'Black Jean Shearling', 2, 125, '/images/midterm/jackets/black-shearling.png', 'https://i.ibb.co/XzcwL5s/black-shearling.png'), 
 (11, 'Blue Jean Jacket', 2, 90, '/images/midterm/jackets/blue-jean-jacket.png', 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png'), 
 (12, 'Grey Jean Jacket', 2, 90, '/images/midterm/jackets/grey-jean-jacket.png', 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png'), 
-(13, 'Brown Shearling', 2, 165, '/images/midterm/jackets/brown-shearling.png', 'https://i.ibb.co/s96FpdP/brown-shearling.png'), 
+(13, 'Brown Shearling', 2, 285, '/images/midterm/jackets/brown-shearling.png', 'https://i.ibb.co/s96FpdP/brown-shearling.png'), 
 (14, 'Tan Trench', 2, 185, '/images/midterm/jackets/brown-trench.png', 'https://i.ibb.co/M6hHc3F/brown-trench.png'), 
 (15, 'Adidas NMD', 3, 220, '/images/midterm/sneakers/adidas-nmd.png', 'https://i.ibb.co/0s3pdnc/adidas-nmd.png'), 
-(16, 'Adidas Yeezy', 3, 280, '/images/midterm/sneakers/yeezy.png', 'https://i.ibb.co/dJbG1cT/yeezy.png'), 
+(28, 'Adidas Yeezy', 3, 280, '/images/midterm/sneakers/yeezy.png', 'https://i.ibb.co/dJbG1cT/yeezy.png'), 
 (17, 'Black Converse', 3, 110, '/images/midterm/sneakers/black-converse.png', 'https://i.ibb.co/bPmVXyP/black-converse.png'), 
-(18, 'Nike White AirForce', 3, 160, '/images/midterm/sneakers/white-nike-high-tops.png', 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png'), 
-(19, 'Nike Red High Tops', 3, 160, '/images/midterm/sneakers/nikes-red.png', 'https://i.ibb.co/QcvzydB/nikes-red.png'), 
-(20, 'Nike Brown High Tops', 3, 160, '/images/midterm/sneakers/nike-brown.png', 'https://i.ibb.co/fMTV342/nike-brown.png'), 
+(18, 'Nike White AirForce', 3, 280, '/images/midterm/sneakers/white-nike-high-tops.png', 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png'), 
+(19, 'Nike Red High Tops', 3, 280, '/images/midterm/sneakers/nikes-red.png', 'https://i.ibb.co/QcvzydB/nikes-red.png'), 
+(20, 'Nike Brown High Tops', 3, 280, '/images/midterm/sneakers/nike-brown.png', 'https://i.ibb.co/fMTV342/nike-brown.png'), 
 (21, 'Air Jordan Limited', 3, 190, '/images/midterm/sneakers//nike-funky.png', 'https://i.ibb.co/w4k6Ws9/nike-funky.png'), 
 (22, 'Timberlands', 3, 200, '/images/midterm/sneakers/timberlands.png', 'https://i.ibb.co/Mhh6wBg/timberlands.png'), 
 (23, 'Blue Tanktop', 4, 25, '/images/midterm/womens/blue-tank.png', 'https://i.ibb.co/7CQVJNm/blue-tank.png'), 
@@ -65,7 +65,7 @@ VALUES
 (35, 'Burgundy T-shirt', 5, 25, '/images/midterm/mens/polka-dot-shirt.png', 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png');
 
 
-INSERT INTO "Shop2_16" (pid, pname, cat_id, price,img_url, remote_img_url)
+INSERT INTO "Shop2_28" (pid, pname, cat_id, price,img_url, remote_img_url)
 VALUES
 (1,'Blue Tanktop',4,25,'/images/midterm/womens/blue-tank.png','https://i.ibb.co/7CQVJNm/blue-tank.png'),
 (2,'Floral Blouse',4,20,'/images/midterm/womens/floral-blouse.png','https://i.ibb.co/4W2DGKm/floral-blouse.png'),

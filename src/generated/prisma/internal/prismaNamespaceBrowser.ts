@@ -54,9 +54,9 @@ export const ModelName = {
   User: 'User',
   Post: 'Post',
   Grocery: 'Grocery',
-  Blog_16: 'Blog_16',
-  Category_16: 'Category_16',
-  Shop_16: 'Shop_16'
+  Blog_28: 'Blog_28',
+  Category_28: 'Category_28',
+  Shop_28: 'Shop_28'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -104,7 +104,7 @@ export const GroceryScalarFieldEnum = {
 export type GroceryScalarFieldEnum = (typeof GroceryScalarFieldEnum)[keyof typeof GroceryScalarFieldEnum]
 
 
-export const Blog_16ScalarFieldEnum = {
+export const Blog_28ScalarFieldEnum = {
   id: 'id',
   title: 'title',
   descrip: 'descrip',
@@ -113,10 +113,10 @@ export const Blog_16ScalarFieldEnum = {
   remote_img: 'remote_img'
 } as const
 
-export type Blog_16ScalarFieldEnum = (typeof Blog_16ScalarFieldEnum)[keyof typeof Blog_16ScalarFieldEnum]
+export type Blog_28ScalarFieldEnum = (typeof Blog_28ScalarFieldEnum)[keyof typeof Blog_28ScalarFieldEnum]
 
 
-export const Category_16ScalarFieldEnum = {
+export const Category_28ScalarFieldEnum = {
   cid: 'cid',
   cname: 'cname',
   size: 'size',
@@ -125,10 +125,10 @@ export const Category_16ScalarFieldEnum = {
   link_url: 'link_url'
 } as const
 
-export type Category_16ScalarFieldEnum = (typeof Category_16ScalarFieldEnum)[keyof typeof Category_16ScalarFieldEnum]
+export type Category_28ScalarFieldEnum = (typeof Category_28ScalarFieldEnum)[keyof typeof Category_28ScalarFieldEnum]
 
 
-export const Shop_16ScalarFieldEnum = {
+export const Shop_28ScalarFieldEnum = {
   pid: 'pid',
   pname: 'pname',
   cat_id: 'cat_id',
@@ -137,7 +137,7 @@ export const Shop_16ScalarFieldEnum = {
   remote_img_url: 'remote_img_url'
 } as const
 
-export type Shop_16ScalarFieldEnum = (typeof Shop_16ScalarFieldEnum)[keyof typeof Shop_16ScalarFieldEnum]
+export type Shop_28ScalarFieldEnum = (typeof Shop_28ScalarFieldEnum)[keyof typeof Shop_28ScalarFieldEnum]
 
 
 export const SortOrder = {

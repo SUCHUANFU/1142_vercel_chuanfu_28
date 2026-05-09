@@ -1,4 +1,4 @@
-create table "Blog_16" (
+create table "Blog_28" (
   id int not null primary key,
   title varchar(255),
   descrip text,
@@ -7,7 +7,7 @@ create table "Blog_16" (
   remote_img text
 );
 
-INSERT INTO "Blog_16" (id, title, descrip, category, img, remote_img)
+INSERT INTO "Blog_28" (id, title, descrip, category, img, remote_img)
 VALUES
 (1, 'Seven Reasons Why Coffee Is Awesome', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'lifestyle', '/images/photo-1.jpg', ''),
 (2, 'Travel To Paris', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'travel', '/images/photo-2.jpg', ''),

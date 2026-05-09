@@ -25,11 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      className={`${geistLocalFont.className} ${geistMonoLocalFont.className} antialiased`}
-    >
-      <Navbar_28 />
-      <main className='max-w-6xl mx-auto py-4'>{children}</main>
-    </div>
+    <html lang='en' suppressHydrationWarning>
+      <body
+        className={`${geistLocalFont.className} ${geistMonoLocalFont.className} antialiased`}
+      >
+        <Navbar_28 />
+        <main className='max-w-6xl mx-auto py-4'>{children}</main>
+      </body>
+    </html>
+    // {/* <div
+    //   className={`${geistLocalFont.className} ${geistMonoLocalFont.className} antialiased`}
+    // > */}
+    //   {/* <Navbar_28 />
+    //   <main className='max-w-6xl mx-auto py-4'>{children}</main>
+    // </div> */}
   );
 }

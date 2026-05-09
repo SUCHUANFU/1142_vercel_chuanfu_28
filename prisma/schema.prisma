@@ -1,5 +1,10 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
   output   = "../src/generated/prisma"
 }
 
@@ -13,7 +18,6 @@ model User {
   name  String?
   posts Post[]
 } 
-
 model Post { 
   id        Int     @id @default(autoincrement()) 
   title     String
@@ -24,8 +28,8 @@ model Post {
 } 
 
 model Grocery {
-  id        String  @id @default(cuid())
-  name      String
+  id   String @id @default(cuid())
+  name String
   completed Boolean @default(false)
 }
 

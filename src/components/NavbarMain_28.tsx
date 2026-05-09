@@ -17,6 +17,7 @@ import {
   MenubarTrigger,
 } from '@/components/ui/menubar';
 import { ModeToggle } from './ModeToggle';
+import { Button } from '@/components/ui/button';
 
 const NavbarMain_28 = () => {
   return (
@@ -118,6 +119,11 @@ const NavbarMain_28 = () => {
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
+      <div className='flex items-center gap-4'>
+        <Link href='/store_28'>
+          <Button variant='outline'>Store</Button>
+        </Link>
+      </div>
       <div>
         <ModeToggle />
       </div>

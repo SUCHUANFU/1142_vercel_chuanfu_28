@@ -7,7 +7,7 @@ const ShopNodeMainPage_xx = () => {
     <Wrapper>
       <div className='midterm'>
         <div className='section-title'>
-          <h4> Hsingtai Chung, 123456789 </h4>
+          <h4> Chuanfu Su, 213410128 </h4>
         </div>
         <div className='homepage'>
           <div className='directory-menu'>

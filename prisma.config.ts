@@ -7,6 +7,7 @@ export default defineConfig({
   schema: 'prisma/schema.prisma',
   migrations: {
     path: 'prisma/migrations',
+    seed: 'tsx prisma/seed.ts',
   },
   datasource: {
     // url: process.env['DATABASE_URL'], //這裡使用 DATABASE_URL，因為它是連接到本地端資料庫的 URL，適合用於應用程式的運行時連接。

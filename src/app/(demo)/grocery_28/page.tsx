@@ -5,7 +5,7 @@ import Form from './_components/Form_28';
 import { nanoid } from 'nanoid';
 import Items from './_components/Items_28';
 import { ToastContainer, toast } from 'react-toastify';
-import Wrapper from '../_assets/wrapper/Grocery_28.jsx';
+import Wrapper from '../_assets/wrapper/Grocery_28';
 
 // 定義資料型別
 export interface Item {

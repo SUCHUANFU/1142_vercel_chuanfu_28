@@ -71,3 +71,8 @@ export type Category_28 = Prisma.Category_28Model
  * 
  */
 export type Shop_28 = Prisma.Shop_28Model
+/**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel

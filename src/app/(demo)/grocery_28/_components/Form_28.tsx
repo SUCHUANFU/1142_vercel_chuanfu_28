@@ -7,7 +7,7 @@ interface FormProps {
   addItem: (itemName: string) => void;
 }
 
-const Form_16 = ({ addItem }: FormProps) => {
+const Form_28 = ({ addItem }: FormProps) => {
   const [newItemName, setNewItemName] = useState('');
 
   const handleSubmit = (e: FormEvent) => {
@@ -37,4 +37,4 @@ const Form_16 = ({ addItem }: FormProps) => {
     </form>
   );
 };
-export default Form_16;
+export default Form_28;

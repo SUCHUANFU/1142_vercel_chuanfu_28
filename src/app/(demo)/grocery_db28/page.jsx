@@ -1,5 +1,5 @@
-import Form_28 from './_components/Form_28.jsx';
-import Items_28 from './_components/Items_28.tsx';
+import Form_28 from './_components/Form_28.js';
+import Items_28 from './_components/Items_28.js';
 // import { nanoid } from 'nanoid';
 // import { ToastContainer, toast } from 'react-toastify';
 

@@ -10,7 +10,7 @@ export const fetchBlog_28 = async () => {
 };
 
 export const deleteBlog_28 = async (id: number) => {
-  console.log('Removing Blog with id:', id);
+  // console.log('Removing Blog with id:', id);
   await prisma.blog_28.delete({
     where: { id },
   });

@@ -15,7 +15,7 @@ const FetchProductsByCategory_xx = () => {
     try {
       const response = await fetch(`http://localhost:5000/api/shop_xx/${cat}`);
       const data = await response.json();
-      console.log('shop_xx data', data);
+      // console.log('shop_xx data', data);
       if (data.length !== 0) {
         setShop_xx(data);
       }
@@ -32,7 +32,7 @@ const FetchProductsByCategory_xx = () => {
     <Wrapper>
       <div className='shop-page'>
         <div className='section-title'>
-          <h4> Chuanfu Su, 213410128 </h4>
+          <h4> Chase Chou, 213410128 </h4>
         </div>
         <div className='collection-page'>
           <h1 className='title capitalize'>{cat}</h1>

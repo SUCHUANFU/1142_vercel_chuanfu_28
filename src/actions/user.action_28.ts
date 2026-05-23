@@ -13,7 +13,7 @@ export const createUser = async (formData: FormData) => {
   const email = formData.get('email') as string;
   const newUser = { name, email };
 
-  console.log('newUser:', newUser);
+  // console.log('newUser:', newUser);
   try {
     const result = await prisma.user.create({
       data: newUser,
@@ -29,7 +29,7 @@ export const createUser2 = async (prevState: any, formData: FormData) => {
   const email = formData.get('email') as string;
   const newUser = { name, email };
 
-  console.log('newUser:', newUser);
+  // console.log('newUser:', newUser);
   try {
     const result = await prisma.user.create({
       data: newUser,
@@ -43,7 +43,7 @@ export const createUser2 = async (prevState: any, formData: FormData) => {
 };
 
 export const removeUser = async (id: number, formData: FormData) => {
-  console.log('Removing user with id:', id);
+  // console.log('Removing user with id:', id);
   await prisma.user.delete({
     where: { id },
   });

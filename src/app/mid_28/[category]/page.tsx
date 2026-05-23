@@ -27,14 +27,14 @@ const FetchProductsByCategory_28 = async ({
   const products = categoryData
     ? await prisma.shop_28.findMany({ where: { cat_id: categoryData.cid } })
     : [];
-  console.log(`Products for ${category}:`, products);
-  console.log('category param:', category);
+  // console.log(`Products for ${category}:`, products);
+  // console.log('category param:', category);
   // console.log('Products by category :', shop_xx);
   return (
     <Wrapper>
       <div className='shop-page'>
         <div className='section-title'>
-          <h4> ChaseChou, 213417028 </h4>
+          <h4> ChuanFu, 213410128 </h4>
         </div>
         <div className='collection-page'>
           <h1 className='title'>{category}</h1>

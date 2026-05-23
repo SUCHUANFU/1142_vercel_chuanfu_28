@@ -9,7 +9,7 @@ const StaticPage_28 = async () => {
     <Wrapper>
       <div className='shop-page'>
         <div className='section-title'>
-          <h4> Chuanfu Su, 213410128</h4>
+          <h4> ChuanFu, 213410128 </h4>
         </div>
         <div className='homepage'>
           <div className='directory-menu'>

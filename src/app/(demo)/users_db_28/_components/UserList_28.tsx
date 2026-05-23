@@ -3,7 +3,7 @@ import DeleteButton_28 from './DeleteButton_28';
 
 const UserList_28 = async () => {
   const users = await fetchUsers_28();
-  console.log('users:', users);
+  // console.log('users:', users);
   return (
     <div className='mt-4'>
       {users.length ? (

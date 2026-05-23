@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { SignOutButton } from '@clerk/nextjs';
 import { toast } from 'sonner';
 
@@ -9,14 +8,9 @@ const StoreSignOut_28 = () => {
   };
   return (
     <SignOutButton redirectUrl='/store_28'>
-      {/* 要確認classname */}
-      <Button
-        variant='ghost'
-        className='w-full justify-start font-normal'
-        onClick={handleLogout}
-      >
+      <button className='w-full text-left' onClick={handleLogout}>
         Logout
-      </Button>
+      </button>
     </SignOutButton>
   );
 };

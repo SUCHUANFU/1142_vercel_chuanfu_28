@@ -6,13 +6,13 @@ import SeedAllBlogs_28 from '../_components/SeedBlogs_28';
 
 const P1_xx = async () => {
   const blogs_28 = await fetchBlog_28();
-  console.log('blogs_28:', blogs_28);
+  // console.log('blogs_28:', blogs_28);
 
   return (
     <Wrapper>
       <section className='blogs'>
         <div className='section-title'>
-          <h2>blogs from local PosgreSQL -- Chuanfu Su, 213410128</h2>
+          <h2>blogs from local PosgreSQL -- ChuanFu, 213410128</h2>
         </div>
         <div className='blogs-center2'>
           {blogs_28?.map((blog) => {

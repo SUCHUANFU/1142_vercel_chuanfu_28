@@ -32,9 +32,9 @@ interface StoreSignInOutProps {
 
 const StoreSignInOut_28 = ({ isAdminUser }: StoreSignInOutProps) => {
   const { isSignedIn, user } = useUser();
-  console.log('isSignedIn:', isSignedIn);
-  console.log('isAdminUser:', isAdminUser);
-  console.log('user:', user);
+  // console.log('isSignedIn:', isSignedIn);
+  // console.log('isAdminUser:', isAdminUser);
+  // console.log('user:', user);
 
   return (
     <DropdownMenu>
@@ -101,7 +101,7 @@ const StoreSignInOut_28 = ({ isAdminUser }: StoreSignInOutProps) => {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           {/* 這裡放登出按鈕 */}
-          <DropdownMenuItem asChild className='p-0'>
+          <DropdownMenuItem>
             <StoreSignOut_28 />
           </DropdownMenuItem>
         </Show>

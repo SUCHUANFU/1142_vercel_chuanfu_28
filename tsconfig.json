@@ -41,5 +41,9 @@
     "src/app/(demo)/grocery_db28/_components/Form_28.jsx",
     "src/app/(demo)/grocery_db28/page.jsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "startup14", // <--- 補上這一行*，確保整個 startup14 目錄被忽略
+    "**/startup14/**/*" //<--- 以及這一行，確保子目錄也忽略
+  ]
 }

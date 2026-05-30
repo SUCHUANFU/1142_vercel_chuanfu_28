@@ -23,7 +23,7 @@ export const createGrocery_28 = async (formData: FormData) => {
     const result = await prisma.grocery.create({
       data: newItem,
     });
-    revalidatePath('/grocery_db28');
+    revalidatePath('/grocery_db16');
   } catch (error) {
     console.error('Error creating grocery item:', error);
   }
@@ -33,7 +33,7 @@ export const removeGrocery_28 = async (id: string, formData: FormData) => {
   await prisma.grocery.delete({
     where: { id },
   });
-  revalidatePath('/grocery_db28');
+  revalidatePath('/grocery_db16');
 };
 
 export const editGrocery_28 = async (id: string, completed: boolean) => {
@@ -42,7 +42,7 @@ export const editGrocery_28 = async (id: string, completed: boolean) => {
       where: { id },
       data: { completed },
     });
-    revalidatePath('/grocery_db28');
+    revalidatePath('/grocery_db16');
   } catch (error) {
     console.error('Error editing grocery item:', error);
     throw error;

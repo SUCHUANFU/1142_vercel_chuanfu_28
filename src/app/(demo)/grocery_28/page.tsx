@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Form from './_components/Form_28';
+import Form from './_components/Form_28.tsx';
 import { nanoid } from 'nanoid';
-import Items from './_components/Items_28';
+import Items from './_components/Items_28.tsx';
 import { ToastContainer, toast } from 'react-toastify';
 import Wrapper from '../_assets/wrapper/Grocery_28.jsx';
 

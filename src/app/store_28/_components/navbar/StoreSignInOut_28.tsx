@@ -75,18 +75,8 @@ const StoreSignInOut_28 = ({ isAdminUser }: StoreSignInOutProps) => {
         {/* 登入後顯示使用者資訊和登出按鈕 */}
         <Show when='signed-in'>
           <DropdownMenuGroup>
-            {links.map((link) => {
-              return (
-                <DropdownMenuItem key={link.href}>
-                  <Link href={link.href} className='w-full capitalize'>
-                    {link.label}
-                  </Link>
-                </DropdownMenuItem>
-              );
-            })}
             {isAdminUser && (
               <>
-                <DropdownMenuSeparator />
                 {linksAdmin.map((link) => {
                   return (
                     <DropdownMenuItem key={link.href}>
@@ -96,8 +86,18 @@ const StoreSignInOut_28 = ({ isAdminUser }: StoreSignInOutProps) => {
                     </DropdownMenuItem>
                   );
                 })}
+                <DropdownMenuSeparator />
               </>
             )}
+            {links.map((link) => {
+              return (
+                <DropdownMenuItem key={link.href}>
+                  <Link href={link.href} className='w-full capitalize'>
+                    {link.label}
+                  </Link>
+                </DropdownMenuItem>
+              );
+            })}
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           {/* 這裡放登出按鈕 */}

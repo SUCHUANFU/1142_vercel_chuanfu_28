@@ -7,6 +7,7 @@ import StyledComponentsRegistry from '../lib/registry';
 import Container from './_components/global/Container';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Toaster } from '@/components/ui/sonner';
+import { Suspense } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -40,8 +41,19 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <NavbarStore_28 />
-            <Container className='py-1'>{children}</Container>
+            {/* 暫時新增*/}
+            <Suspense
+              fallback={
+                <div className='text-center py-24 text-lg'>
+                  Loading Store...
+                </div>
+              }
+            >
+              <NavbarStore_28 />
+              <Container className='py-1'>{children}</Container>
+            </Suspense>
+            {/* <NavbarStore_28 />
+            <Container className='py-1'>{children}</Container> */}
             <Toaster />
           </ThemeProvider>
         </ClerkProvider>

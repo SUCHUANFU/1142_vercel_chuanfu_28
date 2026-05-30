@@ -11,7 +11,7 @@ const Navbar_28 = () => {
       <Link href='/action_28'>Action_28</Link>
       <Link href='/users_db_28'>Users_db_28</Link>
       <Link href='/grocery_28'>Grocery_28</Link>
-      <Link href='/grocery_db28'>grocery_db28</Link>
+      <Link href='/grocery_db28'>Grocery_db28</Link>
     </nav>
   );
 };

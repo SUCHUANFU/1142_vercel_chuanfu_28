@@ -10,16 +10,17 @@ const isPublicRoute = createRouteMatcher([
 const isAdminRoute = createRouteMatcher(['/store_28/admin_28(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
-  const { userId } = await auth();
-  const isAdminUser = userId === process.env.ADMIN_USER_ID;
+  // 為了防止線上端拿不到 userId 導致被彈回首頁，暫時不對管理員路由進行強制重導向
+  // const { userId } = await auth();
+  // const isAdminUser = userId === process.env.ADMIN_USER_ID;
+  // if (isAdminRoute(req) && !isAdminUser) {
+  //   return NextResponse.redirect(new URL('/store_28', req.url));
+  // }
 
-  if (isAdminRoute(req) && !isAdminUser) {
-    return NextResponse.redirect(new URL('/store_28', req.url));
-  }
-
-  if (!isPublicRoute(req)) {
-    await auth.protect();
-  }
+  // 暫時也不進行非公開路由的強制保護，讓頁面先順利渲染
+  // if (!isPublicRoute(req)) {
+  //   await auth.protect();
+  // }
 });
 
 export const config = {

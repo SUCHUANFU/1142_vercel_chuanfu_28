@@ -3,24 +3,23 @@ import { NextResponse } from 'next/server';
 
 const isPublicRoute = createRouteMatcher([
   '/',
-  '/store_28',
-  '/store_28/products_28(.*)',
-  '/store_28/about_28',
+  '/store_16',
+  '/store_16/products_16(.*)',
+  '/store_16/about_16',
 ]);
-const isAdminRoute = createRouteMatcher(['/store_28/admin_28(.*)']);
+const isAdminRoute = createRouteMatcher(['/store_16/admin_16(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
-  // 為了防止線上端拿不到 userId 導致被彈回首頁，暫時不對管理員路由進行強制重導向
-  // const { userId } = await auth();
-  // const isAdminUser = userId === process.env.ADMIN_USER_ID;
-  // if (isAdminRoute(req) && !isAdminUser) {
-  //   return NextResponse.redirect(new URL('/store_28', req.url));
-  // }
+  const { userId } = await auth();
+  const isAdminUser = userId === process.env.ADMIN_USER_ID;
 
-  // 暫時也不進行非公開路由的強制保護，讓頁面先順利渲染
-  // if (!isPublicRoute(req)) {
-  //   await auth.protect();
-  // }
+  if (isAdminRoute(req) && !isAdminUser) {
+    return NextResponse.redirect(new URL('/store_16', req.url));
+  }
+
+  if (!isPublicRoute(req)) {
+    await auth.protect();
+  }
 });
 
 export const config = {

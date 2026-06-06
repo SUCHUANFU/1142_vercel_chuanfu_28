@@ -1,8 +1,25 @@
-import { clerkMiddleware } from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
-// 徹底關掉所有路由攔截與重導向，一律無條件放行
+const isPublicRoute = createRouteMatcher([
+  '/',
+  '/store_xx',
+  '/store_xx/products_xx(.*)',
+  '/store_xx/about_xx',
+]);
+const isAdminRoute = createRouteMatcher(['/store_xx/admin_xx(.*)']);
+
 export default clerkMiddleware(async (auth, req) => {
-  // 暫時不進行任何權限檢查與跳轉，讓線上環境直接順利通關！
+  const { userId } = await auth();
+  const isAdminUser = userId === process.env.ADMIN_USER_ID;
+
+  if (isAdminRoute(req) && !isAdminUser) {
+    return NextResponse.redirect(new URL('/store_xx', req.url));
+  }
+
+  if (!isPublicRoute(req)) {
+    await auth.protect();
+  }
 });
 
 export const config = {

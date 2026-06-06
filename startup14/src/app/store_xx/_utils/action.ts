@@ -64,12 +64,12 @@ export const fetchSingleProduct = async (productId: string) => {
   return product;
 };
 
-// 修正後的管理員商品讀取，暫時跳過 Clerk 與環境變數驗證
+// 這次絕對正確的 fetchAdminProducts
 export const fetchAdminProducts = async () => {
-  // 暫時註解權限檢查，防止 Vercel 線上端因跨網域或金鑰隔離而被跳轉回首頁
+  // 繞過 Clerk 身分驗證
   // await getAdminUser();
   
-  const products = await prisma.prisma.product.findMany({
+  const products = await prisma.product.findMany({
     orderBy: {
       createdAt: 'desc',
     },

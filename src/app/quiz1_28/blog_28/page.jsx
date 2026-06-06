@@ -8,7 +8,7 @@ import Wrapper from '../_assets/wrapper/Blog2_xx';
 import Alert_xx from '../_components/Alert_xx';
 
 const BlogLocalJsonPage2_xx = () => {
-  const [name, setName] = useState('ChuanFu');
+  const [name, setName] = useState('ChaseChou');
   const [id, setId] = useState(213410128);
   const [blogs_xx, setBlogs_xx] = useState(blogData_xx);
   const [alert, setAlert] = useState({

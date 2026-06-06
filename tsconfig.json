@@ -38,7 +38,7 @@
     "src/app/(demo)/grocery_28/_components/Items_28.tsx",
     "src/app/(demo)/grocery_28/_components/Form_28.tsx",
     "src/app/(demo)/grocery_db28/_components/SingleItem_28.jsx",
-    "src/app/(demo)/grocery_db28/_components/Form_28.jsx",
+    "src/app/(demo)/grocery_db28/_components/Form_28x",
     "src/app/(demo)/grocery_db28/page.jsx"
   ],
   "exclude": [

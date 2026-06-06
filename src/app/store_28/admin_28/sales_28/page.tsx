@@ -10,40 +10,55 @@ import {
 
 import { formatCurrency, formatDate } from '../../_utils/format';
 import { fetchAdminOrders } from '../../_utils/action';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Separator } from '@/components/ui/separator';
+export const dynamic = 'force-dynamic';
 
 async function SalesPage() {
   const orders = await fetchAdminOrders();
-  console.log('orders:', orders);
+  // console.log('orders:', orders);
   return (
-    <Table>
-      <TableCaption>Total Orders : {orders.length}</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Email</TableHead>
-          <TableHead>Products</TableHead>
-          <TableHead>Order Total</TableHead>
-          <TableHead>Tax</TableHead>
-          <TableHead>Shipping</TableHead>
-          <TableHead>Date</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {orders?.map((order) => {
-          const { products, orderTotal, tax, shipping, createdAt, email } =
-            order;
-          return (
-            <TableRow key={order.id}>
-              <TableCell>{email}</TableCell>
-              <TableCell>{products}</TableCell>
-              <TableCell>{formatCurrency(orderTotal)}</TableCell>
-              <TableCell>{formatCurrency(tax)}</TableCell>
-              <TableCell>{formatCurrency(shipping)}</TableCell>
-              <TableCell>{formatDate(createdAt)}</TableCell>
-            </TableRow>
-          );
-        })}
-      </TableBody>
-    </Table>
+    <>
+      <div className='space-y-2'>
+        <div className='flex items-center justify-between mr-16'>
+          <h1 className='text-2xl text-bold'>Sales_28</h1>
+          <Button asChild variant='default'>
+            <Link href='/store_28/admin_28/sales_28/create'>Create Sales</Link>
+          </Button>
+        </div>
+      </div>
+      <Separator className='my-4' />
+      <Table>
+        <TableCaption>Total Orders : {orders.length}</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Email</TableHead>
+            <TableHead>Products</TableHead>
+            <TableHead>Order Total</TableHead>
+            <TableHead>Tax</TableHead>
+            <TableHead>Shipping</TableHead>
+            <TableHead>Date</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {orders?.map((order) => {
+            const { products, orderTotal, tax, shipping, createdAt, email } =
+              order;
+            return (
+              <TableRow key={order.id}>
+                <TableCell>{email}</TableCell>
+                <TableCell>{products}</TableCell>
+                <TableCell>{formatCurrency(orderTotal)}</TableCell>
+                <TableCell>{formatCurrency(tax)}</TableCell>
+                <TableCell>{formatCurrency(shipping)}</TableCell>
+                <TableCell>{formatDate(createdAt)}</TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </>
   );
 }
 export default SalesPage;

@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 function AboutPage_28() {
   return (
     <section>

@@ -1,4 +1,5 @@
 import ProductsContainer_28 from '../_components/products/ProductsContainer_28';
+export const dynamic = 'force-dynamic';
 
 const ProductsPage_28 = async ({
   searchParams,

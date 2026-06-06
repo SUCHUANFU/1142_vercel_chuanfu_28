@@ -9,7 +9,6 @@ import { deleteImage, uploadImage } from './supabase';
 import { productSchema, validateWithZodSchema } from './schemas';
 
 export type Product = Prisma.ProductGetPayload<object>;
-
 export const fetchFeaturedProducts = async () => {
   const products = await prisma.product.findMany({
     where: {
@@ -21,16 +20,15 @@ export const fetchFeaturedProducts = async () => {
 
 const getAuthUser = async () => {
   const user = await currentUser();
-  if (!user) {
-    console.log('No auth user found, bypass redirect');
-    return null;
-  }
+  if (!user) redirect('/store_28');
   return user;
 };
 
 const getAdminUser = async () => {
-  console.log('Bypass getAdminUser check');
-  return null;
+  const user = await getAuthUser();
+  if (user.id !== process.env.ADMIN_USER_ID) redirect('/store_28');
+  // console.log('admin user:', user.id);
+  return user;
 };
 
 const renderError = (error: unknown): { message: string } => {
@@ -61,15 +59,13 @@ export const fetchSingleProduct = async (productId: string) => {
     },
   });
   if (!product) {
-    console.log('Product not found');
+    redirect('/store_28/products_28');
   }
   return product;
 };
 
-// 100% 放行版管理員商品讀取
 export const fetchAdminProducts = async () => {
-  // 拔除權限檢查，防止線上重導向
-  // await getAdminUser();
+  await getAdminUser();
   const products = await prisma.product.findMany({
     orderBy: {
       createdAt: 'desc',
@@ -78,10 +74,8 @@ export const fetchAdminProducts = async () => {
   return products;
 };
 
-// 100% 放行版管理員訂單讀取
 export const fetchAdminOrders = async () => {
-  // 拔除權權檢查
-  // await getAdminUser();
+  await getAdminUser();
   const orders = await prisma.order.findMany({
     where: {
       isPaid: true,
@@ -98,13 +92,13 @@ export const createProductAction = async (
   formData: FormData,
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
-  if (!user) return { message: 'Unauthorized' };
 
   try {
     const name = formData.get('name') as string;
     const company = formData.get('company') as string;
     const price = Number(formData.get('price') as string);
     const image = formData.get('image') as string;
+    // const image = formData.get('image') as File;
     const description = formData.get('description') as string;
     const featured = Boolean(formData.get('featured') as string);
 
@@ -130,7 +124,6 @@ export const createProductAction2 = async (
   formData: FormData,
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
-  if (!user) return { message: 'Unauthorized' };
 
   try {
     const rawData = Object.fromEntries(formData);
@@ -147,16 +140,16 @@ export const createProductAction2 = async (
     return renderError(error);
   }
 };
-
 export const deleteProductAction = async (prevState: { productId: string }) => {
   const { productId } = prevState;
-  // await getAdminUser();
+  await getAdminUser();
   try {
     const product = await prisma.product.delete({
       where: {
         id: productId,
       },
     });
+    // await deleteImage(product.image);
     revalidatePath('/store_28/admin_28/products_28');
     return { message: 'product removed' };
   } catch (error) {
@@ -165,12 +158,13 @@ export const deleteProductAction = async (prevState: { productId: string }) => {
 };
 
 export const fetchAdminProductDetails = async (productId: string) => {
-  // await getAdminUser();
+  await getAdminUser();
   const product = await prisma.product.findUnique({
     where: {
       id: productId,
     },
   });
+  if (!product) redirect('/store_28/admin_28/products_28');
   return product;
 };
 
@@ -178,7 +172,7 @@ export const updateProductAction = async (
   prevState: any,
   formData: FormData,
 ) => {
-  // await getAdminUser();
+  await getAdminUser();
   try {
     const productId = formData.get('id') as string;
     const rawData = Object.fromEntries(formData);

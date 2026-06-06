@@ -64,11 +64,8 @@ export const fetchSingleProduct = async (productId: string) => {
   return product;
 };
 
-// 這次絕對正確的 fetchAdminProducts
 export const fetchAdminProducts = async () => {
-  // 繞過 Clerk 身分驗證
-  // await getAdminUser();
-  
+  await getAdminUser();
   const products = await prisma.product.findMany({
     orderBy: {
       createdAt: 'desc',
